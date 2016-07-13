@@ -47,7 +47,7 @@ Multi-armed bandits can also provide value by eliminating the need for repeated 
   <img src="figs/epsilongreedy.png"  height="300"  hspace="50" vspace="10">
 </figure>
 
-The most straightforward algorithm for continuously balancing exploration with exploitation is called "epsilon-greedy". A schematic diagram for the algorithm is shown above. Here, we pull a randomly chosen arm a fraction &epsilon; of the time. The other 1-&epsilon; of the time, we pull the arm which we estimate to be the most profitable. As each arm is pulled and rewards are received, our extimates of arm values are updated. This method can be thought of a a continuous testing setup, where we devote a fraction &epsilon; of our resources to testing.
+The most straightforward algorithm for continuously balancing exploration with exploitation is called "epsilon-greedy". A schematic diagram for the algorithm is shown above. Here, we pull a randomly chosen arm a fraction &epsilon; of the time. The other 1-&epsilon; of the time, we pull the arm which we estimate to be the most profitable. As each arm is pulled and rewards are received, our estimates of arm values are updated. This method can be thought of a a continuous testing setup, where we devote a fraction &epsilon; of our resources to testing.
 
 The following python code implements a simple 10-Armed Bandit using the epsilon-greedy algorithm. The payout rate of the arms are normally distributed with mean=0 and sigma=1. Gaussian noise is also added to the rewards, also with mean=0 and sigma=1. This setup mirrors that of <a href="https://webdocs.cs.ualberta.ca/~sutton/book/the-book.html">Sutton and Barto</a>, Section 2.1.
 
@@ -152,9 +152,9 @@ There is a nice alternative to the epsilon-greedy algorithm known as Randomized 
 
 ## Twitter Demo
 
-The following demo using Twitter data further illustrates how this works. Imagine that we are running a political ad campaign. Each time an individual Twitter user sends a tweet with the word "president" or "election" in it, we serve them an imaginary ad. We have three distinct ads we can choose from. A "hillary clinton" ad, a "bernie sanders" ad, and a "donald trump" ad. We further imagine that the individual has "clicked" on our ad if his tweet contains a reference to the corresponding candidate name. We will use randomized probability matching to continuously update our estimates of the probability distribution for the click rate of each ad. The video below shows how these distributions evolve in real time as tweets are collected. The x-axis represents click-rate, and the y-axis represents probability density.
+The following demo using Twitter data further illustrates how this works. Imagine that we are running a political ad campaign. Each time an individual Twitter user sends a tweet with the word "president" or "election" in it, we serve them an imaginary ad. We have three distinct ads we can choose from. A "hillary clinton" ad, a "bernie sanders" ad, and a "donald trump" ad. We further imagine that the individual has "clicked" on our ad if his tweet contains a reference to the corresponding candidate name. We will use randomized probability matching to continuously update our estimates of the probability distribution for the click rate of each ad. The video below shows how these distributions evolve in real time as tweets are collected. The x-axis represents click-rate, and the y-axis represents probability density. Note that this video has been sped up by 8x.
 
-[![TwitterBandit](https://img.youtube.com/vi/kr0aC7TRtv4/0.jpg)](https://www.youtube.com/watch?v=kr0aC7TRtv4)
+[![TwitterBandit](https://img.youtube.com/vi/p4NGSH819ZU/0.jpg)](https://www.youtube.com/watch?v=p4NGSH819ZU)
 
 There are several interesting things to note about this demo:
 
